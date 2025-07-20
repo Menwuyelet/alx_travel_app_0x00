@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class Listing(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
     location = models.CharField(max_length=100)
